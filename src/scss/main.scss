@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// CORE
+@import "core/breakpoints";
+@import "core/colors";
+@import "core/typography";
+@import "core/utilities";
+
+// PARTIALS
+@import "partials/header";
+@import "partials/footer";
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+$openSans: "Open Sans", sans-serif;
+$ubuntu: "Ubuntu", sans-serif;
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: 4px;
+  scrollbar-color: #70ebc6 #a6ff00;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #70ebc6;
+  border-radius: 999px;
+}
+
+.login-input-container {
+  @apply flex flex-col gap-4 relative pt-[20px] pb-[23px];
+
+  .decoration {
+    position: absolute;
+    display: block;
+    bottom: 23px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    pointer-events: none;
+    background-color: $blue;
+    z-index: 1;
+    transition: width 0.5s ease;
+  }
+
+  .input-field {
+    font-size: 18px;
+    color: $white;
+    padding: 4px 0 8px 0;
+    border-bottom: 1px solid $white;
+    background-color: transparent;
+    width: 100%;
+    position: relative;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .label-field,
+    &:valid ~ .label-field {
+      top: 0px;
+      font-size: 14px;
+      padding-left: 0;
+      // color: $white-grey-2;
+    }
+
+    &.has-value ~ .decoration {
+      width: 100%;
+    }
+  }
+
+  .label-field {
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    top: 24px;
+    font-weight: 300;
+    font-size: 18px;
+    color: $white-grey-2;
+  }
+
+  .forget-password {
+    position: absolute;
+    top: calc(100% - 19px);
+    right: 0;
+    font-size: 14px;
+    color: $blue;
+
+    &:hover {
+      color: $blue-dark;
+      text-decoration: underline;
+    }
+  }
+
+  .icon-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 2px;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .error {
+    position: absolute;
+    top: calc(100% - 19px);
+    left: 0;
+    font-size: 14px;
+    color: $red;
+  }
+}
+
+.system-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: #ffffff;
+  // padding-top: 40px;
+
+  ul {
+    li.item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      height: 56px;
+      padding: 0 64px 0 32px;
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten($color: $inactive, $amount: 46);
+      }
+
+      &:hover.active {
+        background-color: #ffffff;
+      }
+
+      &.active {
+        svg.icon {
+          fill: $burgundy;
+        }
+      }
+
+      svg.icon {
+        fill: $inactive;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0px;
+        height: 100%;
+        border-radius: 999px;
+        background-color: transparent;
+      }
+
+      &.active {
+        &::after {
+          width: 4px;
+          background-color: $burgundy;
+        }
+      }
+
+      &.active {
+        span {
+          color: $burgundy;
+        }
+      }
+
+      span {
+        font-weight: 700;
+        color: $inactive;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.system-input-container {
+  @apply flex flex-col gap-4 relative pt-[20px] pb-[23px];
+
+  .decoration {
+    position: absolute;
+    display: block;
+    bottom: 23px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    pointer-events: none;
+    background-color: $blue;
+    z-index: 1;
+    transition: width 0.5s ease;
+  }
+
+  .input-field {
+    font-size: 18px;
+    color: $black;
+    padding: 4px 0 8px 0;
+    border-bottom: 1px solid $inactive;
+    background-color: transparent;
+    width: 100%;
+    position: relative;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .label-field,
+    &:valid ~ .label-field {
+      top: 0px;
+      font-size: 14px;
+      padding-left: 0;
+      color: $black;
+      font-weight: 700;
+    }
+
+    &:focus,
+    &:valid {
+      border-bottom: 1px solid $black;
+    }
+
+    &.has-value ~ .decoration {
+      width: 100%;
+    }
+  }
+
+  .label-field {
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    top: 24px;
+    font-weight: 300;
+    font-size: 18px;
+    color: $inactive;
+  }
+
+  .forget-password {
+    position: absolute;
+    top: calc(100% - 19px);
+    right: 0;
+    font-size: 14px;
+    color: $blue;
+
+    &:hover {
+      color: $blue-dark;
+      text-decoration: underline;
+    }
+  }
+
+  .icon-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 2px;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .error {
+    position: absolute;
+    top: calc(100% - 19px);
+    left: 0;
+    font-size: 14px;
+    color: $red;
+  }
+}

@@ -1,0 +1,20 @@
+.responsive-title {
+  font-size: 32px;
+
+  @include sm {
+    font-size: 36px;
+    
+  }
+}
+
+.text-size {
+  font-size: 22.5px;
+}
+
+// make a responsive title style
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}

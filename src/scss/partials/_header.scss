@@ -1,0 +1,243 @@
+$w-bars: 30px;
+$h-bars: 3px;
+
+.overflow {
+  display: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - 500px);
+
+  &.active {
+    // background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+  }
+
+  @include xl {
+    display: none;
+
+    &.active {
+      display: none;
+    }
+  }
+}
+
+// .header {
+//   position: relative;
+//   width: 100%;
+//   z-index: 10;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+
+//   // mostra o scroll fixado no top
+//   &.show {
+//     transition: 0.5s;
+//     position: fixed;
+//     top: 0;
+//     left: 0px;
+//   }
+
+//   // esconde o scroll fixado no top
+//   &.hide {
+//     position: fixed;
+//     top: -80px;
+//     left: 0px;
+//   }
+
+//   // efeito de transição
+//   &.transition {
+//     transition: 0.5s;
+//   }
+
+//   // mudar plano de fundo do header
+//   &.scrolled {
+//     background: #131111;
+
+//     &::after {
+//       content: "";
+//       width: 100%;
+//     }
+//   }
+
+//   &::after {
+//     content: "";
+//     transition: 0.5s;
+//     width: 0;
+//     height: 1px;
+//     background: #1b1818;
+//     position: absolute;
+//     bottom: 0;
+//     transform: translateX(-50%);
+//     left: 50%;
+//   }
+
+//   .menu {
+//     background: rgba(0, 0, 0, 0);
+//     transition: 0s;
+//     width: 100%;
+//     max-width: 1110px;
+//     margin: auto;
+//     z-index: 10;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     position: relative;
+//     height: 80px;
+//     padding: 0 16px;
+
+//     @include xl {
+//       padding: 0;
+//     }
+
+//     .lista {
+//       transition: 0.3s;
+//       position: absolute;
+//       top: 100%;
+//       left: 0%;
+//       width: 100%;
+//       background: rgba(0, 0, 0, 0.9);
+
+//       height: 0;
+//       visibility: hidden;
+//       overflow: hidden;
+
+//       @include xl {
+//         position: static;
+//         background: transparent;
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
+//         height: auto;
+//         visibility: visible;
+//       }
+
+//       .item {
+//         height: 80px;
+//         font-weight: 700;
+//         padding: 0 32px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         text-align: center;
+//         cursor: pointer;
+
+//         .link {
+//           transition: 0.3s;
+//           color: #e6e6e6;
+//         }
+
+//         &:hover {
+//           .link {
+//             color: #fff;
+//           }
+
+//           .link::after {
+//             height: 2px;
+//             border-radius: 100px;
+//             width: calc(100% + 40px);
+//           }
+//         }
+
+//         .link {
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           width: 100%;
+//           height: 100%;
+
+//           @include xl {
+//             position: relative;
+//             font-size: 16px;
+
+//             &::after {
+//               content: "";
+//               position: absolute;
+//               bottom: 0;
+//               left: 50%;
+//               transform: translateX(-50%);
+//               width: 0px;
+
+//               background: #fff;
+//               transition: 0.3s;
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .toggle-btn {
+//       width: 80px;
+//       height: 30px;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+
+//       @include xl {
+//         display: none;
+//       }
+
+//       .bars {
+//         transition: 0.3s;
+//         position: relative;
+//         width: $w-bars;
+//         height: $h-bars;
+//         background: #fff;
+//         border-radius: 3px;
+
+//         &::after,
+//         &::before {
+//           content: "";
+//           transition: 0.3s;
+
+//           width: $w-bars;
+//           height: $h-bars;
+//           background: #fff;
+
+//           position: absolute;
+
+//           left: 0;
+//           border-radius: 3px;
+//         }
+
+//         &::before {
+//           top: -10px;
+//         }
+
+//         &::after {
+//           top: 10px;
+//         }
+//       }
+//     }
+//   }
+
+//   .menu.open {
+//     background: rgba(0, 0, 0, 0.9);
+
+//     .lista {
+//       height: 420px;
+//       visibility: visible;
+//       overflow: scroll;
+//     }
+
+//     .toggle-btn {
+//       .bars {
+//         background: transparent;
+//       }
+
+//       .bars::after,
+//       .bars::before {
+//         top: 0;
+//       }
+
+//       .bars::after {
+//         transform: rotate(45deg);
+//       }
+
+//       .bars::before {
+//         transform: rotate(-45deg);
+//       }
+//     }
+//   }
+// }
