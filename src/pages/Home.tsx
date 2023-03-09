@@ -31,12 +31,10 @@ export function Home() {
     }
 
     setFormFields({ ...formFields, [name]: value });
-    console.log(formFields);
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event?.preventDefault();
-    console.log("submit");
   }
 
   return (
@@ -84,7 +82,9 @@ export function Home() {
                   senha
                 </label>
                 <span className="decoration"></span>
-                <Link className="forget-password" to={"/"}>Esqueceu a senha?</Link>
+                <Link className="forget-password" to={"/"}>
+                  Esqueceu a senha?
+                </Link>
               </div>
             </div>
             <div className="flex flex-col gap-4 w-full items-center">
@@ -94,9 +94,7 @@ export function Home() {
               >
                 entrar
               </button>
-              <div>
-                
-              </div>
+              <div></div>
               <Link
                 className="text-white-grey text-center text-[14px] p-4 hover:text-blue active:text-white"
                 to={"/registro"}

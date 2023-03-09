@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { RowFoods } from "../components/RowFoods";
 import { Layout } from "../partials/Layout";
+import { GenericApi } from "../utils/genericApi";
 
 export function Alimentos() {
   const [foodData, setFoodData] = useState<any>(null);
@@ -8,11 +9,11 @@ export function Alimentos() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://127.0.0.1:8000/api/food/");
-      const json = await response.json();
-      console.log(json);
-      setFoodData(json);
+      let api = new GenericApi("api/food/");
+      const data = await api.getAll();
+      setFoodData(data);
     }
+
     fetchData();
   }, []);
 

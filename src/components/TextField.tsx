@@ -1,15 +1,15 @@
 import React from "react";
 
-type InputFieldProps = {
+type TextFieldProps = {
   label: string;
-  value: string | number;
+  value?: string | number;
   name: string;
   onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export function InputField(props: InputFieldProps) {
+export function TextField(props: TextFieldProps) {
   // remove spaces and accents
 
   return (

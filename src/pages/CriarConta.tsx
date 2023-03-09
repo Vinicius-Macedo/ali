@@ -34,12 +34,10 @@ export function CriarConta() {
     }
 
     setFormFields({ ...formFields, [name]: value });
-    console.log(formFields);
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event?.preventDefault();
-    console.log("submit");
   }
 
   return (

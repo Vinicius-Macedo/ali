@@ -226,7 +226,8 @@ $ubuntu: "Ubuntu", sans-serif;
     }
 
     &:focus ~ .label-field,
-    &:valid ~ .label-field {
+    &:valid ~ .label-field,
+    &.active {
       top: 0px;
       font-size: 14px;
       padding-left: 0;
@@ -285,5 +286,18 @@ $ubuntu: "Ubuntu", sans-serif;
     left: 0;
     font-size: 14px;
     color: $red;
+  }
+}
+
+.dotted-after {
+  display: flex;
+  width: 100%;
+
+  &:after {
+    border-bottom: 2px dotted #000;
+    margin-left: 8px;
+    margin-bottom: 6px;
+    content: "";
+    flex: 1;
   }
 }
